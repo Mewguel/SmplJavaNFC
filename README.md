@@ -12,4 +12,4 @@ __How To Run the program__
                    - e.x.: `sdk.dir=C\:\\Users\\DEV-DIANNE\\AppData\\Local\\Android\\Sdk`
 
 __Dependencies__
-    1. Dependency1
+   1. Dependency1
