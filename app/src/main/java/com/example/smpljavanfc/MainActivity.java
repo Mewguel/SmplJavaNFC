@@ -1,9 +1,6 @@
 package com.example.smpljavanfc;
 
-import android.content.Context;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +15,7 @@ import com.example.smpljavanfc.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+//        setContentView(R.layout.activity_signin);
 
         setSupportActionBar(binding.toolbar);
 
@@ -38,13 +37,6 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -79,9 +71,14 @@ public class MainActivity extends AppCompatActivity {
     // for NFC activity
     public void handleNFCRead(View v) {
         Toast.makeText(this, "Reading NFC Tag",Toast.LENGTH_SHORT).show();
+        TextView nfcReadOutput = findViewById(R.id.textview_nfc_info);
+        nfcReadOutput.setText("Serial Number: 1234\n" +
+                              "ISBN: 9780590353403\n" +
+                              "Author: J.K. Labajo\n");
     }
 
     public void handleNFCWrite(View v) {
         Toast.makeText(this, "Writing to NFC Tag",Toast.LENGTH_SHORT).show();
     }
+
 }
