@@ -1,5 +1,6 @@
 package com.example.smpljavanfc;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -17,6 +18,7 @@ import com.example.smpljavanfc.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,5 +74,14 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    // for NFC activity
+    public void handleNFCRead(View v) {
+        Toast.makeText(this, "Reading NFC Tag",Toast.LENGTH_SHORT).show();
+    }
+
+    public void handleNFCWrite(View v) {
+        Toast.makeText(this, "Writing to NFC Tag",Toast.LENGTH_SHORT).show();
     }
 }
