@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+//          setContentView(R.layout.fragment_splash_screen);
         setContentView(binding.getRoot());
 //        setContentView(R.layout.activity_signin);
 

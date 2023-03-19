@@ -3,7 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/SplashScreenFragment">
+
+    <fragment
+        android:id="@+id/SplashScreenFragment"
+        android:name="com.example.smpljavanfc.SplashScreenFragment"
+        android:label="@string/splash_screen_fragment_label"
+        tools:layout="@layout/fragment_splash_screen">
+
+        <action
+            android:id="@+id/action_SplashScreenFragment_to_SignInFragment"
+            app:destination="@id/SignInFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignInFragment"
+        android:name="com.example.smpljavanfc.SignInFragment"
+        android:label="@string/sign_in"
+        tools:layout="@layout/fragment_sign_in">
+
+        <action
+            android:id="@+id/action_SignInFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/FirstFragment"
